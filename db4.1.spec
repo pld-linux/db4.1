@@ -148,8 +148,8 @@ Berkeley database library for Java.
 Biblioteka baz danych Berkeley dla Javy.
 
 %package tcl
-Summary:	Berkeley database library for TCL
-Summary(pl):	Biblioteka baz danych Berkeley dla TCL
+Summary:	Berkeley database library for Tcl
+Summary(pl):	Biblioteka baz danych Berkeley dla Tcl
 Group:		Development/Languages/Tcl
 Requires:	tcl
 Provides:	db-tcl = 4.1.25-4
@@ -157,14 +157,14 @@ Obsoletes:	db-tcl < 4.2
 Obsoletes:	db4-tcl
 
 %description tcl
-Berkeley database library for TCL.
+Berkeley database library for Tcl.
 
 %description tcl -l pl
-Biblioteka baz danych Berkeley dla TCL.
+Biblioteka baz danych Berkeley dla Tcl.
 
 %package tcl-devel
-Summary:	Berkeley database library for TCL
-Summary(pl):	Biblioteka baz danych Berkeley dla TCL
+Summary:	Berkeley database library for Tcl
+Summary(pl):	Biblioteka baz danych Berkeley dla Tcl
 Group:		Development/Languages/Tcl
 Requires:	tcl
 Requires:	%{name}-tcl = %{version}
@@ -174,10 +174,10 @@ Obsoletes:	db4-tcl
 Conflicts:	db-devel < 4.1.25-3
 
 %description tcl-devel
-Berkeley database library for TCL.
+Berkeley database library for Tcl.
 
 %description tcl-devel -l pl
-Biblioteka baz danych Berkeley dla TCL.
+Biblioteka baz danych Berkeley dla Tcl.
 
 %package utils
 Summary:	Command line tools for managing Berkeley DB databases
