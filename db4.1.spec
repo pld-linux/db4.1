@@ -278,7 +278,10 @@ cd ../build_unix
 	includedir=$RPM_BUILD_ROOT%{_includedir} \
 	LIB_INSTALL_FILE_LIST=""
 
-(cd $RPM_BUILD_ROOT%{_libdir}
+#rm -rf examples_java
+#cp -a java/src/com/sleepycat/examples examples_java
+
+cd $RPM_BUILD_ROOT%{_libdir}
 ln -sf libdb-4.1.so libdb4.so
 ln -sf libdb-4.1.so libndbm-4.1.so
 ln -sf libdb-4.1.la libdb.la
@@ -298,11 +301,6 @@ mv -f libdb_cxx-4.1.la libdb_cxx-4.1.la.tmp
 sed -e "s/old_library=''/old_library='libdb-4.1.a'/" libdb-4.1.la.tmp > libdb-4.1.la
 sed -e "s/old_library=''/old_library='libdb_cxx-4.1.a'/" libdb_cxx-4.1.la.tmp > libdb_cxx-4.1.la
 rm -f libdb*.la.tmp
-)
-
-cd ..
-#rm -rf examples_java
-#cp -a java/src/com/sleepycat/examples examples_java
 
 %clean
 rm -rf $RPM_BUILD_ROOT
