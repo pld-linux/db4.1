@@ -20,7 +20,7 @@ BuildRequires:	ed
 %{?_with_java:BuildRequires:	gcc-java}
 BuildRequires:	libstdc++-devel
 BuildRequires:	tcl-devel >= 8.3.2
-Provides:	db = 4.1.25-1
+Provides:	db = 4.1.25-4
 Obsoletes:	db < 4.2
 Obsoletes:	db4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,7 +44,7 @@ Summary:	Header files for Berkeley database library
 Summary(pl):	Pliki nag³ówkowe do biblioteki Berkeley Database
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
-Provides:	db-devel = 4.1.25-1
+Provides:	db-devel = 4.1.25-4
 Obsoletes:	db-devel < 4.2
 Obsoletes:	db3-devel
 Obsoletes:	db4-devel
@@ -76,7 +76,7 @@ Summary:	Static libraries for Berkeley database library
 Summary(pl):	Statyczne biblioteki Berkeley Database
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
-Provides:	db-static = 4.1.25-1
+Provides:	db-static = 4.1.25-4
 Obsoletes:	db-static < 4.2
 Obsoletes:	db3-static
 Obsoletes:	db4-static
@@ -107,7 +107,7 @@ u¿ywaj±cych Berkeley DB.
 Summary:	Berkeley database library for C++
 Summary(pl):	Biblioteka baz danych Berkeley dla C++
 Group:		Libraries
-Provides:	db-cxx = 4.1.25-1
+Provides:	db-cxx = 4.1.25-4
 Obsoletes:	db-cxx < 4.2
 Obsoletes:	db4-cxx
 
@@ -123,7 +123,7 @@ Summary(pl):	Biblioteka baz danych Berkeley dla C++
 Group:		Libraries
 Requires:	%{name}-cxx = %{version}
 Requires:	%{name}-devel = %{version}
-Provides:	db-cxx-devel = 4.1.25-1
+Provides:	db-cxx-devel = 4.1.25-4
 Obsoletes:	db-cxx-devel < 4.2
 Obsoletes:	db4-cxx
 Conflicts:	db-devel < 4.1.25-3
@@ -138,7 +138,7 @@ Biblioteka baz danych Berkeley dla C++.
 Summary:	Berkeley database library for Java
 Summary(pl):	Biblioteka baz danych Berkeley dla Javy
 Group:		Libraries
-Provides:	db-java = 4.1.25-1
+Provides:	db-java = 4.1.25-4
 Obsoletes:	db-java < 4.2
 
 %description java
@@ -152,7 +152,7 @@ Summary:	Berkeley database library for TCL
 Summary(pl):	Biblioteka baz danych Berkeley dla TCL
 Group:		Development/Languages/Tcl
 Requires:	tcl
-Provides:	db-tcl = 4.1.25-1
+Provides:	db-tcl = 4.1.25-4
 Obsoletes:	db-tcl < 4.2
 Obsoletes:	db4-tcl
 
@@ -168,7 +168,7 @@ Summary(pl):	Biblioteka baz danych Berkeley dla TCL
 Group:		Development/Languages/Tcl
 Requires:	tcl
 Requires:	%{name}-tcl = %{version}
-Provides:	db-tcl-devel = 4.1.25-1
+Provides:	db-tcl-devel = 4.1.25-4
 Obsoletes:	db-tcl-devel < 4.2
 Obsoletes:	db4-tcl
 Conflicts:	db-devel < 4.1.25-3
@@ -184,7 +184,7 @@ Summary:	Command line tools for managing Berkeley DB databases
 Summary(pl):	Narzêdzia do obs³ugi baz Berkeley DB z linii poleceñ
 Group:		Applications/Databases
 Requires:	%{name} = %{version}
-Provides:	db-utils = 4.1.25-1
+Provides:	db-utils = 4.1.25-4
 Obsoletes:	db-utils < 4.2
 Obsoletes:	db4-utils
 
