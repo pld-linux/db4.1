@@ -1,0 +1,31 @@
+diff -Nur db-4.1.24.orig/dist/configure.ac db-4.1.24/dist/configure.ac
+--- db-4.1.24.orig/dist/configure.ac	Fri Sep  6 15:32:00 2002
++++ db-4.1.24/dist/configure.ac	Tue Nov 19 10:46:41 2002
+@@ -474,27 +474,6 @@
+ aux*)	ADDITIONAL_OBJS="getopt${o} $ADDITIONAL_OBJS";;
+ esac
+ 
+-# Linux has the O_DIRECT flag, but you can't actually use it.
+-AC_CACHE_CHECK([for open/O_DIRECT], db_cv_open_o_direct, [
+-echo "test for working open/O_DIRECT" > __o_direct_file
+-AC_TRY_RUN([
+-#include <sys/types.h>
+-#include <fcntl.h>
+-main() {
+-int c, fd = open("__o_direct_file", O_RDONLY | O_DIRECT, 0);
+-exit ((fd == -1) || (read(fd, &c, 1) != 1));
+-}], [db_cv_open_o_direct=yes], [db_cv_open_o_direct=no],
+-AC_TRY_LINK([
+-#include <sys/types.h>   
+-#include <fcntl.h>], [
+-	open("__o_direct_file", O_RDONLY | O_DIRECT, 0);
+-], [db_cv_open_o_direct=yes], [db_cv_open_o_direct=no]))
+-rm -f __o_direct_file])
+-if test "$db_cv_open_o_direct" = yes; then
+-	AC_DEFINE(HAVE_O_DIRECT)
+-	AH_TEMPLATE(HAVE_O_DIRECT, [Define to 1 if you have the O_DIRECT flag.])
+-fi
+-
+ # Check for largefile support.
+ AC_SYS_LARGEFILE
+ 
