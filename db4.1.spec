@@ -23,6 +23,8 @@ BuildRequires:	tcl-devel >= 8.3.2
 Obsoletes:	db4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_includedir	%{_prefix}/include/db4.1
+
 %description
 The Berkeley Database (Berkeley DB) is a programmatic toolkit that
 provides embedded database support for both traditional and
@@ -210,9 +212,7 @@ CFLAGS="%{rpmcflags} -fno-implicit-templates"
 CXXFLAGS="%{rpmcflags} -fno-implicit-templates"
 export CC CXX CFLAGS CXXFLAGS
 
-../dist/configure \
-	--prefix=%{_prefix} \
-	--libdir=%{_libdir} \
+../dist/%configure \
 	--enable-compat185 \
 	--disable-shared \
 	--enable-static \
@@ -226,9 +226,7 @@ export CC CXX CFLAGS CXXFLAGS
 
 cd ../build_unix
 
-../dist/configure \
-	--prefix=%{_prefix} \
-	--libdir=%{_libdir} \
+../dist/%configure \
 	--enable-compat185 \
 	--enable-shared \
 	--disable-static \
@@ -248,12 +246,15 @@ install -d $RPM_BUILD_ROOT{%{_includedir},%{_libdir},%{_bindir},/lib}
 cd build_unix.static
 
 %{__make} library_install \
+	bindir=$RPM_BUILD_ROOT%{_bindir} \
 	prefix=$RPM_BUILD_ROOT%{_prefix} \
-	libdir=$RPM_BUILD_ROOT%{_libdir} 
+	libdir=$RPM_BUILD_ROOT%{_libdir} \
+	includedir=$RPM_BUILD_ROOT%{_includedir}
 
 cd ../build_unix
 
 %{__make} library_install \
+	bindir=$RPM_BUILD_ROOT%{_bindir} \
 	prefix=$RPM_BUILD_ROOT%{_prefix} \
 	libdir=$RPM_BUILD_ROOT%{_libdir} \
 	includedir=$RPM_BUILD_ROOT%{_includedir} \
@@ -261,16 +262,16 @@ cd ../build_unix
 
 (cd $RPM_BUILD_ROOT%{_libdir}
 ln -sf libdb-4.1.so libdb4.so
-ln -sf libdb-4.1.so libndbm.so
+ln -sf libdb-4.1.so libndbm-4.1.so
 ln -sf libdb-4.1.la libdb.la
 ln -sf libdb-4.1.la libdb4.la
-ln -sf libdb-4.1.la libndbm.la
+ln -sf libdb-4.1.la libndbm-4.1.la
 ln -sf libdb_tcl-4.1.la libdb_tcl.la
 ln -sf libdb_cxx-4.1.la libdb_cxx.la
 mv -f libdb.a libdb-4.1.a
 ln -sf libdb-4.1.a libdb.a
 ln -sf libdb-4.1.a libdb4.a
-ln -sf libdb-4.1.a libndbm.a
+ln -sf libdb-4.1.a libndbm-4.1.a
 mv -f libdb_cxx.a libdb_cxx-4.1.a
 ln -sf libdb_cxx-4.1.a libdb_cxx.a
 
@@ -300,7 +301,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE README
-#%attr(755,root,root) /lib/libdb-*.so
 %attr(755,root,root) %{_libdir}/libdb-4.*.so
 
 %files devel
@@ -308,17 +308,13 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/{api*,ref,index.html,sleepycat,images} examples_c*
 %{_includedir}/db.h
 %{_includedir}/db_185.h
-%{_libdir}/libdb-4.1.la
-%{_libdir}/libdb.la
-%{_libdir}/libdb.so
-%{_libdir}/libdb4.la
-%{_libdir}/libdb4.so
-%{_libdir}/libndbm.la
-%{_libdir}/libndbm.so
+%{_libdir}/libdb-4.*.la
+%{_libdir}/libndbm-4.*.la
+%{_libdir}/libndbm-4.*.so
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/lib*-4.*.a
 
 %files cxx
 %defattr(644,root,root,755)
@@ -329,9 +325,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/cxx_common.h
 %{_includedir}/cxx_except.h
 %{_includedir}/db_cxx.h
-%{_libdir}/libdb_cxx-4.1.la
-%{_libdir}/libdb_cxx.la
-%{_libdir}/libdb_cxx.so
+%{_libdir}/libdb_cxx-4.*.la
 
 %if %{?_with_java:1}%{!?_with_java:0}
 %files java
@@ -347,8 +341,6 @@ rm -rf $RPM_BUILD_ROOT
 %files tcl-devel
 %defattr(644,root,root,755)
 %{_libdir}/libdb_tcl-4.1.la
-%{_libdir}/libdb_tcl.la
-%{_libdir}/libdb_tcl.so
 
 %files utils
 %defattr(644,root,root,755)
