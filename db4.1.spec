@@ -305,8 +305,8 @@ rm -f libdb*.la.tmp
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %post	tcl -p /sbin/ldconfig
 %postun	tcl -p /sbin/ldconfig
