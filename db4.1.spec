@@ -208,7 +208,7 @@ cd build_unix.static
 
 CC="%{__cc}"
 CXX="%{__cxx}"
-CFLAGS="%{rpmcflags} -fno-implicit-templates"
+CFLAGS="%{rpmcflags}"
 CXXFLAGS="%{rpmcflags} -fno-implicit-templates"
 export CC CXX CFLAGS CXXFLAGS
 
