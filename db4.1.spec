@@ -11,7 +11,7 @@ License:	BSD
 Group:		Libraries
 # alternative site (sometimes working): http://www.berkeleydb.com/
 Source0:	http://www.sleepycat.com/update/snapshot/db-%{version}.tar.gz
-# Source0-md5: df71961002b552c0e72c6e4e358f27e1
+# Source0-md5:	df71961002b552c0e72c6e4e358f27e1
 Patch0:		db-o_direct.patch
 Patch1:		http://www.sleepycat.com/update/4.1.25/patch.4.1.25.1
 URL:		http://www.sleepycat.com/
