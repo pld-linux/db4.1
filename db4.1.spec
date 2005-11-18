@@ -10,7 +10,8 @@ Release:	1
 License:	BSD
 Group:		Libraries
 # alternative site (sometimes working): http://www.berkeleydb.com/
-Source0:	http://www.sleepycat.com/update/snapshot/db-%{version}.tar.gz
+#Source0Download: http://dev.sleepycat.com/downloads/releasehistorybdb.html
+Source0:	http://downloads.sleepycat.com/db-%{version}.tar.gz
 # Source0-md5:	df71961002b552c0e72c6e4e358f27e1
 Patch0:		db-o_direct.patch
 Patch1:		http://www.sleepycat.com/update/4.1.25/patch.4.1.25.1
@@ -43,7 +44,7 @@ Pythonie i Perlu.
 Summary:	Header files for Berkeley database library
 Summary(pl):	Pliki nag³ówkowe do biblioteki Berkeley Database
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Provides:	db-devel = 4.1.25-4
 Obsoletes:	db-devel < 4.2
 Obsoletes:	db3-devel
@@ -75,7 +76,7 @@ programów u¿ywaj±cych Berkeley DB.
 Summary:	Static libraries for Berkeley database library
 Summary(pl):	Statyczne biblioteki Berkeley Database
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 Provides:	db-static = 4.1.25-4
 Obsoletes:	db-static < 4.2
 Obsoletes:	db3-static
@@ -121,8 +122,8 @@ Biblioteka baz danych Berkeley dla C++.
 Summary:	Berkeley database library for C++
 Summary(pl):	Biblioteka baz danych Berkeley dla C++
 Group:		Libraries
-Requires:	%{name}-cxx = %{version}
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-cxx = %{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 Provides:	db-cxx-devel = 4.1.25-4
 Obsoletes:	db-cxx-devel < 4.2
 Obsoletes:	db4-cxx
@@ -167,7 +168,7 @@ Summary:	Berkeley database library for Tcl
 Summary(pl):	Biblioteka baz danych Berkeley dla Tcl
 Group:		Development/Languages/Tcl
 Requires:	tcl
-Requires:	%{name}-tcl = %{version}
+Requires:	%{name}-tcl = %{version}-%{release}
 Provides:	db-tcl-devel = 4.1.25-4
 Obsoletes:	db-tcl-devel < 4.2
 Obsoletes:	db4-tcl
@@ -183,7 +184,7 @@ Biblioteka baz danych Berkeley dla Tcl.
 Summary:	Command line tools for managing Berkeley DB databases
 Summary(pl):	Narzêdzia do obs³ugi baz Berkeley DB z linii poleceñ
 Group:		Applications/Databases
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Provides:	db-utils = 4.1.25-4
 Obsoletes:	db-utils < 4.2
 Obsoletes:	db4-utils
