@@ -155,8 +155,8 @@ Biblioteka baz danych Berkeley dla Tcl.
 Summary:	Berkeley database library for Tcl
 Summary(pl):	Biblioteka baz danych Berkeley dla Tcl
 Group:		Development/Languages/Tcl
-Requires:	tcl
 Requires:	%{name}-tcl = %{version}-%{release}
+Requires:	tcl
 Obsoletes:	db4-tcl
 Conflicts:	db-devel < 4.1.25-3
 
