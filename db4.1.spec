@@ -3,7 +3,7 @@
 %bcond_with	java	# build db-java
 #
 Summary:	BSD database library for C
-Summary(pl.UTF-8):   Biblioteka C do obsługi baz Berkeley DB
+Summary(pl.UTF-8):	Biblioteka C do obsługi baz Berkeley DB
 Name:		db4.1
 Version:	4.1.25
 Release:	1
@@ -41,7 +41,7 @@ Pythonie i Perlu.
 
 %package devel
 Summary:	Header files for Berkeley database library
-Summary(pl.UTF-8):   Pliki nagłówkowe do biblioteki Berkeley Database
+Summary(pl.UTF-8):	Pliki nagłówkowe do biblioteki Berkeley Database
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	db4-devel
@@ -70,7 +70,7 @@ programów używających Berkeley DB.
 
 %package static
 Summary:	Static libraries for Berkeley database library
-Summary(pl.UTF-8):   Statyczne biblioteki Berkeley Database
+Summary(pl.UTF-8):	Statyczne biblioteki Berkeley Database
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	db4-static
@@ -99,7 +99,7 @@ używających Berkeley DB.
 
 %package cxx
 Summary:	Berkeley database library for C++
-Summary(pl.UTF-8):   Biblioteka baz danych Berkeley dla C++
+Summary(pl.UTF-8):	Biblioteka baz danych Berkeley dla C++
 Group:		Libraries
 Provides:	db-cxx = %{version}-%{release}
 Obsoletes:	db4-cxx
@@ -112,7 +112,7 @@ Biblioteka baz danych Berkeley dla C++.
 
 %package cxx-devel
 Summary:	Berkeley database library for C++
-Summary(pl.UTF-8):   Biblioteka baz danych Berkeley dla C++
+Summary(pl.UTF-8):	Biblioteka baz danych Berkeley dla C++
 Group:		Libraries
 Requires:	%{name}-cxx = %{version}-%{release}
 Requires:	%{name}-devel = %{version}-%{release}
@@ -127,7 +127,7 @@ Biblioteka baz danych Berkeley dla C++.
 
 %package java
 Summary:	Berkeley database library for Java
-Summary(pl.UTF-8):   Biblioteka baz danych Berkeley dla Javy
+Summary(pl.UTF-8):	Biblioteka baz danych Berkeley dla Javy
 Group:		Libraries
 Provides:	db-java = %{version}-%{release}
 
@@ -139,7 +139,7 @@ Biblioteka baz danych Berkeley dla Javy.
 
 %package tcl
 Summary:	Berkeley database library for Tcl
-Summary(pl.UTF-8):   Biblioteka baz danych Berkeley dla Tcl
+Summary(pl.UTF-8):	Biblioteka baz danych Berkeley dla Tcl
 Group:		Development/Languages/Tcl
 Requires:	tcl
 Provides:	db-tcl = %{version}-%{release}
@@ -153,7 +153,7 @@ Biblioteka baz danych Berkeley dla Tcl.
 
 %package tcl-devel
 Summary:	Berkeley database library for Tcl
-Summary(pl.UTF-8):   Biblioteka baz danych Berkeley dla Tcl
+Summary(pl.UTF-8):	Biblioteka baz danych Berkeley dla Tcl
 Group:		Development/Languages/Tcl
 Requires:	%{name}-tcl = %{version}-%{release}
 Requires:	tcl
@@ -168,7 +168,7 @@ Biblioteka baz danych Berkeley dla Tcl.
 
 %package utils
 Summary:	Command line tools for managing Berkeley DB databases
-Summary(pl.UTF-8):   Narzędzia do obsługi baz Berkeley DB z linii poleceń
+Summary(pl.UTF-8):	Narzędzia do obsługi baz Berkeley DB z linii poleceń
 Group:		Applications/Databases
 Requires:	%{name} = %{version}-%{release}
 Provides:	db-utils = %{version}-%{release}
