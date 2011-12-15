@@ -1,0 +1,4 @@
+- added patch to disable O_DIRECT flag testing (O_DIRECT is silently
+  ignored by 2.2.x kernels, so db will not work on 2.4.x, which returns
+  EINVAL on read/write)
+- rel. 4
