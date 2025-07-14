@@ -272,7 +272,7 @@ poleceń.
 # official patches
 %patchset_patch 1 %{patchlevel}
 
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 cd dist
